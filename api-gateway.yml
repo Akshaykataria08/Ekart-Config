@@ -1,0 +1,43 @@
+server:
+  port: 8005
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/HASHKART_API_GATEWAY
+    username: root
+    password: Akki0808
+    hikari:
+      connection-timeout: 60000
+      maximum-pool-size: 5
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+
+userServiceUrl: http://localhost:8001
+productServiceUrl: http://localhost:8002
+cartServiceUrl: http://localhost:8003
+couponServiceUrl: http://localhost:8004
+
+zuul:
+  routes:
+    cartService:
+      path: /cart/**
+      url: ${cartServiceUrl}/cart
+    productService:
+      path: /products/**
+      url: ${productServiceUrl}/products
+    userService:
+      path: /users/**
+      url: ${userServiceUrl}/users
+    couponService:
+      path: /coupon/**
+      url: ${couponServiceUrl}/coupon
+
+logging:
+  level:
+    com:
+      hashkart:
+        apigateway: INFO
