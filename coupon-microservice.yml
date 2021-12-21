@@ -1,0 +1,28 @@
+server:
+  port: 8004
+
+spring:
+  application:
+    name: coupon-microservice
+  datasource:
+    url: jdbc:mysql://localhost:3306/HASHKART_COUPON_SERVICE
+    username: root
+    password: Akki0808
+    hikari:
+      connection-timeout: 60000
+      maximum-pool-size: 5
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+management.endpoints.web.exposure.include: mappings
+
+logging.level.com.hashkart.productmicroservice: INFO

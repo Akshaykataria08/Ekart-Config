@@ -2,6 +2,8 @@ server:
   port: 8005
 
 spring:
+  application:
+    name: api-gateway
   datasource:
     url: jdbc:mysql://localhost:3306/HASHKART_API_GATEWAY
     username: root
@@ -16,28 +18,35 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.MySQL5InnoDBDialect
 
-userServiceUrl: http://localhost:8001
-productServiceUrl: http://localhost:8002
-cartServiceUrl: http://localhost:8003
-couponServiceUrl: http://localhost:8004
+userServiceUrl: user-microservice
+productServiceUrl: product-microservice
+cartServiceUrl: cart-microservice
+couponServiceUrl: coupon-microservice
 
 zuul:
   routes:
     cartService:
       path: /cart/**
-      url: ${cartServiceUrl}/cart
+      serviceId: ${cartServiceUrl}
+      stripPrefix: false
     productService:
       path: /products/**
-      url: ${productServiceUrl}/products
+      url: ${productServiceUrl}
+      stripPrefix: false
     userService:
       path: /users/**
-      url: ${userServiceUrl}/users
+      url: ${userServiceUrl}
+      stripPrefix: false
     couponService:
       path: /coupon/**
-      url: ${couponServiceUrl}/coupon
+      url: ${couponServiceUrl}
+      stripPrefix: false
 
-logging:
-  level:
-    com:
-      hashkart:
-        apigateway: INFO
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+management.endpoints.web.exposure.include: mappings
+
+logging.level.com.hashkart.apigateway: INFO
