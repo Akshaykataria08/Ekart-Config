@@ -4,7 +4,7 @@ app:
     thresholdQuantity: 2
 
 productServiceUrl: http://product-microservice
-productServiceBasePath: /product
+productServiceBasePath: /products
 productServiceBulkUpdatePath: /products/bulk
 couponServiceUrl: http://coupon-microservice
 couponServicePath: /coupon
