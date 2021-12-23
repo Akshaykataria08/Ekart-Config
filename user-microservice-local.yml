@@ -1,5 +1,8 @@
 server.port: 8001
 
+cartServiceUrl: http://cart-microservice
+cartServicePath: /cart
+
 spring:
   datasource:
     url: jdbc:mysql://localhost:3306/HASHKART_USER_SERVICE

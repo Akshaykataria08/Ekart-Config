@@ -3,6 +3,12 @@ app:
     defaultDiscount: 10
     thresholdQuantity: 2
 
+productServiceUrl: http://product-microservice
+productServiceBasePath: /product
+productServiceBulkUpdatePath: /products/bulk
+couponServiceUrl: http://coupon-microservice
+couponServicePath: /coupon
+
 server:
   port: 8003
 

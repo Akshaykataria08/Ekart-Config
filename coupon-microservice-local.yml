@@ -1,6 +1,12 @@
 server:
   port: 8004
 
+productServiceUrl: http://product-microservice
+productServiceBasePath: /products
+productServiceBulkUpdatePath: /products/bulk
+couponServiceUrl: http://coupon-microservice
+couponServicePath: /coupon
+
 spring:
   datasource:
     url: jdbc:mysql://localhost:3306/HASHKART_COUPON_SERVICE
