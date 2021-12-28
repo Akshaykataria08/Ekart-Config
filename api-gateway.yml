@@ -1,3 +1,9 @@
+jwt:
+  secret: e37fefb4-67f7-11ec-90d6-0242ac120003
+  expires-in: 600
+  header: Authorization
+  issuer: hashkart
+
 server:
   port: 8005
 

@@ -1,6 +1,6 @@
 app:
   discount:
-    defaultDiscount: 10
+    defaultDiscount: 15
     thresholdQuantity: 2
 
 productServiceUrl: http://product-microservice
