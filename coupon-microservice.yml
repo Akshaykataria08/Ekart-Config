@@ -18,11 +18,6 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.MySQL5InnoDBDialect
 
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
-
 management.endpoints.web.exposure.include: mappings
 
 logging.level.com.hashkart.productmicroservice: INFO

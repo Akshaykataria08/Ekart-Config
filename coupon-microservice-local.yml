@@ -13,11 +13,6 @@ spring:
     username: root
     password: Akki0808
 
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
-
 logging.level.com.hashkart.apigateway: DEBUG
 
 management.endpoints.web.exposure.include: "*"
