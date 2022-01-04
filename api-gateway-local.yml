@@ -18,4 +18,4 @@ userServicePath: /users/profile
 
 logging.level.com.hashkart.apigateway: DEBUG
 
-management.endpoints.web.exposure.include: "*"
+management.endpoints.web.exposure.include: health,info,refresh,mappings

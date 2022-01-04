@@ -29,6 +29,6 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.MySQL5InnoDBDialect
 
-management.endpoints.web.exposure.include: mappings
+management.endpoints.web.exposure.include: health,info,refresh,mappings
 
 logging.level.com.hashkart.productmicroservice: INFO

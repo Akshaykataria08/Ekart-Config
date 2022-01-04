@@ -39,6 +39,10 @@ zuul:
       path: /products/**
       url: ${productServiceUrl}
       stripPrefix: false
+    getAllProducts:
+      path: /products
+      url: ${productService}
+      stripPrefix: false
     userService:
       path: /users/**
       url: ${userServiceUrl}
@@ -48,6 +52,6 @@ zuul:
       url: ${couponServiceUrl}
       stripPrefix: false
 
-management.endpoints.web.exposure.include: mappings
+management.endpoints.web.exposure.include: health,info,refresh,mappings
 
 logging.level.com.hashkart.apigateway: INFO
